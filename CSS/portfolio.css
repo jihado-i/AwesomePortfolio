@@ -1,0 +1,125 @@
+.portfolio-box .img-box {
+  display: flex;
+  width: 100%;
+  height: 18rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.portfolio-box .img-box iframe {
+  width: 100%;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.portfolio-box .img-box:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-box .info-box {
+  margin: 0 4rem;
+}
+
+.portfolio-box .info-box .info-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 1rem;
+}
+
+.portfolio-box .info-box .info-title h3 {
+  font-size: 1.3rem;
+}
+
+.portfolio-box .info-box .info-title a {
+  display: flex;
+  align-items: center;
+  color: var(--main-color);
+}
+
+.portfolio-box .info-box .info-title a i {
+  margin-left: 0.3rem;
+}
+
+.portfolio-box .info-box .info-title p:nth-of-type(1) {
+  font-weight: 600;
+}
+
+.portfolio-box .info-box {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-box {
+  margin: 0 1.15rem;
+}
+
+/**/
+.contact-box .field {
+  width: 100%;
+  background: transparent;
+  border: var(--border);
+  border-radius: 0.3rem;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.contact-box .field::placeholder {
+  color: var(--text-color);
+}
+
+.contact-box {
+  text-align: center;
+}
+
+.contact-box textarea {
+  resize: none;
+  height: 12rem;
+}
+
+.contact-box .btn {
+  cursor: pointer;
+}
+
+.back-profile {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  right: 2rem;
+  bottom: 1.2rem;
+  border-radius: 0.3rem;
+  background: transparent;
+  color: var(--main-color);
+  border: var(--border);
+  font-size: 1.1rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.back-profile:hover {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+.back-profile p {
+  color: var(--main-color);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(0.5);
+  font-size: 1rem;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.back-profile:hover p {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  top: -1.8rem;
+}

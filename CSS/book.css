@@ -1,0 +1,379 @@
+.book {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  perspective: 250rem;
+}
+
+.book .book-page {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: var(--pages-color);
+  box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  transition: transform 1s ease; /* جعل التحول أكثر مرونة */
+}
+
+.book-page.page-left {
+  box-shadow: -0.6rem 0.6rem 0.6rem rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 9.5rem;
+  height: 3rem;
+  background: var(--main-color);
+  border: var(--border);
+  color: var(--white-color);
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 1rem;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2) {
+  background: transparent;
+  color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2):hover {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+.warpper {
+  position: relative;
+  width: 66rem;
+  height: 36rem;
+  padding: 0.8rem 1rem;
+  animation: show-animate 3s forwards;
+  perspective: 250rem;
+  transform: scale(0.8);
+}
+
+@keyframes show-animate {
+  0%,
+  25% {
+    opacity: 0;
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--cover-color);
+  box-shadow: var(--box-shadow);
+  border-top-left-radius: 0.6rem;
+  border-bottom-left-radius: 0.6rem;
+  transform-origin: right;
+}
+
+.cover-left {
+  z-index: -1;
+}
+
+.cover.cover-right {
+  z-index: 100;
+  transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.cover.cover-right.turn {
+  transform: rotateY(180deg);
+}
+
+.book-page.page-right {
+  position: absolute;
+  right: 0;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: transform 1s ease; /* جعل التحول أكثر مرونة */
+}
+
+.book-page.page-right.turn {
+  transform: rotateY(-180deg);
+}
+
+.book-page .page-front,
+.book-page .page-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--pages-color);
+}
+
+.book-page .page-front {
+  transform: rotateY(0deg) translateZ(1px);
+}
+
+.book-page .page-back {
+  transform: rotateY(180deg) translateZ(1px);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.workeduc-box {
+  border-left: var(--border);
+}
+
+.workeduc-box .workeduc-content {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.workeduc-content ul {
+  list-style: border;
+}
+
+.workeduc-box .workeduc-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -0.65rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: var(--main-color);
+  border-radius: 50%;
+}
+
+.workeduc-box .workeduc-content .year {
+  color: var(--main-color);
+}
+
+.wordeduc-content .year i {
+  margin-left: 0.4rem;
+}
+
+.number-page {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nextprev-btn {
+  position: absolute;
+  bottom: 0.9rem;
+  right: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 2rem;
+  color: var(--second-text-color);
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.nextprev-btn:hover {
+  color: var(--main-color);
+}
+
+.nextprev-btn.back {
+  left: 1.5rem;
+}
+
+.services-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.services-box .services-content {
+  flex: 1 1 10rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+  padding: 0.8rem 0.5rem 1.1rem;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.workeduc-content .year i {
+  margin-left: 0.4rem;
+}
+
+.services-box .services-content:hover {
+  box-shadow: var(--box-shadow);
+}
+
+.services-box .services-content i {
+  font-size: 2.5rem;
+  color: var(--main-color);
+}
+
+.services-content h3 {
+  font-size: 1.1rem;
+}
+
+.services-content p {
+  margin: 0.2rem 0 0.8rem;
+}
+
+.services-content .btn {
+  width: 8rem;
+  height: 2.5rem;
+}
+
+.skills-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.skills-box .skills-content {
+  flex: 1 1 20rem;
+}
+
+.skills-content h3 {
+  font-size: 1.3rem;
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+.skills-content .content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skills-content .content span {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 5rem;
+  border: var(--border);
+  border-radius: 0.3rem;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+  background-color: #f5f5f5; /* لون الخلفية الأساسي */
+  animation: pulseEffect 3s infinite; /* تأثير النبض */
+}
+
+.skills-content .content span:hover {
+  box-shadow: var(--box-shadow);
+  transform: scale(1.1); /* تكبير بسيط عند التمرير */
+  background-color: #ffdd57; /* تغيير لون الخلفية عند التمرير */
+}
+
+@keyframes pulseEffect {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.1); /* تكبير بسيط */
+    box-shadow: 0 0 15px var(--box-shadow); /* إضافة تأثير ظل */
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+.skills-content .content span i {
+  font-size: 2.6rem;
+  color: var(--main-color);
+}
+
+.skills-content:last-of-type .content span:before {
+  transition: 1s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  content: "";
+  background-color: var(--main-color);
+  animation: expandAnimation 2s forwards; /* إضافة الأنيميشن */
+}
+
+@keyframes expandAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.book-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: transform 0.5s, z-index 0.5s;
+}
+
+.book-page.turn {
+  transform: rotateY(-180deg); /* أو أي أنيميشن آخر للصفحة */
+  transition: transform 1s ease-in-out, z-index 0s ease-in-out;
+  z-index: 20;
+}
+.book-page.turn {
+  transform: rotateY(-180deg); /* تقليب الصفحة عند تطبيق كلاس "turn" */
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--cover-color);
+  box-shadow: var(--box-shadow);
+  border-top-left-radius: 0.6rem;
+  border-bottom-left-radius: 0.6rem;
+  transform-origin: right;
+}
+
+.cover-left {
+  z-index: -1;
+}
+
+.cover.cover-right {
+  z-index: 100;
+  transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.cover.cover-right.turn {
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 1000px) {
+  .btn .btn-box {
+    display: none; /* إخفاء العنصر عند تصغير الشاشة */
+  }
+
+  .btn {
+    margin: 0.5rem; /* تقليل الهوامش عند تصغير الشاشة */
+    /* يمكن إضافة خصائص أخرى حسب الحاجة */
+  }
+}
